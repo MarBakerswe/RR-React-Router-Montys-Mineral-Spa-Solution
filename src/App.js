@@ -5,6 +5,10 @@ import './App.css';
 import Home from './components/Home'
 import About from './components/About'
 import Packages from './components/Packages'
+import Nav from 'react-bootstrap/Nav'
+import Container from 'react-bootstrap/Container'
+
+
 
 
 function App() {
@@ -16,9 +20,9 @@ function App() {
     <div className="App">
       <Router>
         <header>
-          <h1 className="title">Welcome to Monty's Mineral SPA</h1>
+           <h1 className="title">Welcome to Monty's Mineral SPA</h1>
 
-          <div className="navBar">
+          {/*<div className="navBar">
             <ul>
               <li>
                 <Link to="/">Home</Link>
@@ -30,7 +34,31 @@ function App() {
                 <Link to="/packages">Our Packages</Link>
               </li>
             </ul>
-          </div>
+          </div> */}
+        <Container> 
+        <Nav variant="tabs" defaultActiveKey="/" fill>
+    
+                <Nav.Item>
+                  <Nav.Link href='/'>
+                  <Link to='/'>Home</Link>
+                  </Nav.Link>
+                </Nav.Item>
+                
+                <Nav.Item>
+                  <Nav.Link eventKey={"aboutPage"}>
+                  <Link to='/about'>About Us</Link>
+                  </Nav.Link>
+                </Nav.Item>
+
+                <Nav.Item>
+                  <Nav.Link eventKey={"packagesPage"}>
+                  <Link to='/packages'>Out Packages</Link>
+                  </Nav.Link>
+                </Nav.Item>
+
+              </Nav>
+          </Container>
+        
         </header>
 
         <div className="display">
